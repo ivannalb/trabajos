@@ -1,0 +1,40 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int functionimlb(int a, int b){
+	int x=a,y=b, rem;
+	do{
+		rem=remainder(x,y); // x % y
+		// x=division*(y)+rem;
+		if(rem<0)
+			{rem=rem*-1;}
+		x=y;
+		y=rem;
+
+	} while(rem!=0);
+	return x;
+}
+int gcd(int a, int b){
+	if (a==b){
+		return a;
+	} else {
+		if (a>b){
+			return gcd(a-b,b) ;
+		} else{
+			return gcd(a,b-a) ;
+		}
+	}
+}
+ int main(){
+ 	float x,y;
+ 	cout<<" the largest value:";
+ 	cin>>x;
+
+ 	cout<<"the lowest value:";
+ 	cin>>y;
+
+ 	cout<<"greatest common divison of two numbers:"<<functionimlb(x,y)<<endl;
+ 	return 0;
+
+ 	 }
